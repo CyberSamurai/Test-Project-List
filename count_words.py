@@ -12,9 +12,12 @@ def count_words(string):
     return len(words)
 
 
-def open_file(file):
+def main(file):
     filename = os.path.abspath(file)
     with open(filename, 'r') as f:
         count = [count_words(line) for line in f]
         for i, v in enumerate(count):
             print "Line %d has %d words in it." % (i+1, v)
+
+if __name__ == '__main__':
+    main('footext.txt')
